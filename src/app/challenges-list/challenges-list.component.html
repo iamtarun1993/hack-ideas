@@ -1,0 +1,43 @@
+
+
+<ng-container *ngFor="let challenge of challenges$ | async">
+  <div class="challenge-card">
+    <mat-card>
+      <mat-card-header class="display-block">
+        <mat-card-title>
+          <div class="display-flex justify-content-space-between">
+            <div>{{challenge.name}}</div>
+            <div>{{challenge.no_of_likes}} Likes</div>
+          </div>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div>
+          {{challenge.description}}
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <div class="display-flex justify-content-space-between">
+          <div>
+            <button mat-button (click)="liked(challenge.id)">
+              <mat-icon [ngClass]="{'liked-challenge': challenge.is_liked}">thumb_up</mat-icon>
+            </button>
+
+          </div>
+
+          <div>
+            <mat-chip-list >
+              <mat-chip *ngFor="let tag of challenge.tags">{{tag}}</mat-chip>
+            </mat-chip-list>
+          </div>
+
+        </div>
+        
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+  
+</ng-container>
