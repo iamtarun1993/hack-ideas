@@ -1,0 +1,15 @@
+.sign-in {
+  &--body {
+    height: 100%;
+  }
+
+  &--form {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #161528;
+    border-radius: 4px;
+  }
+}
