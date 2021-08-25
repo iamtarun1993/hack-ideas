@@ -1,0 +1,64 @@
+.test-grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row dense;
+  grid-gap: 20px;
+}
+
+.navbar-container {
+  margin: 20px;
+}
+
+.drop-down {
+  width: 100px;
+}
+
+.abc-33{
+  border: 1px solid green;
+  border-radius: 4px;
+  padding: 20px
+}
+
+.image-container {
+  height: 200px;
+}
+.image {
+  width: 200px;
+  height: 200px;
+}
+
+.prev-next-container {
+  padding: 20px
+}
+
+.table {
+  margin-top: 10px
+}
+
+table, th, td {
+  border: 1px solid red;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .test-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .table {
+    overflow-x:auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .test-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .table {
+    overflow-x:auto;
+  }
+}

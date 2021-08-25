@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
+import { TestComponent } from './test/test.component';
 
 
 
@@ -21,7 +22,8 @@ import { MatSelectModule } from '@angular/material/select';
   declarations: [
     AppComponent,
     SignInComponent,
-    ChallengesListComponent
+    ChallengesListComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display: flex;
 }
 
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.display-grid {
+  display: grid;
+}
+
 .display-block {
   display: block !important;
 }
@@ -21,7 +29,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: flex-end;
 }
 
-
 .width-100 {
   width: 100%;
 }
+
+// .abc-33 {
+//   width: 33vw;;
+// }
