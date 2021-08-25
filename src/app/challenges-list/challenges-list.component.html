@@ -1,3 +1,13 @@
+<div class="display-flex justify-content-flex-end sort-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Sort By</mat-label>
+    <mat-select (selectionChange)="doSomething($event)">
+      <mat-option *ngFor="let sortByOption of sortByOptions" [value]="sortByOption.value">
+        {{sortByOption.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
 
 <ng-container *ngFor="let challenge of challenges$ | async">
@@ -6,7 +16,7 @@
       <mat-card-header class="display-block">
         <mat-card-title>
           <div class="display-flex justify-content-space-between">
-            <div>{{challenge.name}}</div>
+            <div>{{challenge.name}} ({{challenge.created_at | date : 'MMM d, y'}})</div>
             <div>{{challenge.no_of_likes}} Likes</div>
           </div>
         </mat-card-title>
