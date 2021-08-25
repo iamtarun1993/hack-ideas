@@ -1,3 +1,14 @@
+# Make sure angular cli is installed in your system.
+$ npm install -g @angular/cli
+
+# Pull the repo and navigate inside the repo and do
+$ npm i
+
+# To run this application
+$ ng serve
+
+
+### Ignore
 # HackIdeas
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
