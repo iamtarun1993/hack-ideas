@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Challenges } from '../interfaces/challenges';
 import { StorageService } from './storage.service';
 import { map, switchMap} from 'rxjs/operators';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Injectable({
   providedIn: 'root'
@@ -97,6 +98,26 @@ export class ChallengesService {
       }),
       switchMap((updatedChallnegs) => {
         return this.setStorage(updatedChallnegs);
+      })
+    )
+  }
+
+  postChallenge(newChallenge: Challenges){
+    return this.getAllChallenges().pipe(
+      map((challenges) => {
+        const maxId = challenges.sort((first, second) => {
+          return first.id < second.id ?  1 : -1;
+        })[0].id
+        const nextId = maxId + 1;
+
+        challenges.push({
+          ...newChallenge,
+          id: nextId
+        })
+        return challenges;
+      }),
+      switchMap((challenges) => {
+        return this.setStorage(challenges);
       })
     )
 

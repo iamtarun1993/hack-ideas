@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, noop, Observable } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
 import { Challenges } from '../interfaces/challenges';
@@ -15,7 +16,8 @@ export class ChallengesListComponent implements OnInit {
   sortByOptions!: { value: string; label: string; }[];
 
   constructor(
-    private challengesService: ChallengesService
+    private challengesService: ChallengesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -71,6 +73,11 @@ export class ChallengesListComponent implements OnInit {
       )
     }
 
+  }
+
+  newChallenge() {
+    //this.router.navigate(['/', ])
+    this.router.navigate(['/', 'new_challenge'])
   }
 
 }

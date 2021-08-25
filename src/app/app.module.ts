@@ -15,6 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
 import { TestComponent } from './test/test.component';
+import { NewChallengeComponent } from './new-challenge/new-challenge.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -23,7 +25,9 @@ import { TestComponent } from './test/test.component';
     AppComponent,
     SignInComponent,
     ChallengesListComponent,
-    TestComponent
+    TestComponent,
+    NewChallengeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

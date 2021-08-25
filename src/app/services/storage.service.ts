@@ -21,4 +21,14 @@ export class StorageService {
     data.value = JSON.stringify(data.value);
     return of(localStorage.setItem(data.key, data.value))
   }
+
+  removeItem(key: string) {
+    if (key === 'user') {
+      // Clearing all storage on logout
+      localStorage.clear();
+    } else {
+      localStorage.removeItem(key);
+    }
+    return of(null);
+  }
 }

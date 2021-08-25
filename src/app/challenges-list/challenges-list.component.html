@@ -1,14 +1,22 @@
-<div class="display-flex justify-content-flex-end sort-container">
-  <mat-form-field appearance="fill">
-    <mat-label>Sort By</mat-label>
-    <mat-select (selectionChange)="doSomething($event)">
-      <mat-option *ngFor="let sortByOption of sortByOptions" [value]="sortByOption.value">
-        {{sortByOption.label}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
+<div class="display-flex justify-content-space-between sort-container">
+  <div>
+    <button mat-stroked-button (click)="newChallenge()">New Challenge</button>
+  </div>
 
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Sort By</mat-label>
+      <mat-select (selectionChange)="doSomething($event)">
+        <mat-option *ngFor="let sortByOption of sortByOptions" [value]="sortByOption.value">
+          {{sortByOption.label}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+ 
+</div>
 
 <ng-container *ngFor="let challenge of challenges$ | async">
   <div class="challenge-card">

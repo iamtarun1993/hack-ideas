@@ -1,0 +1,13 @@
+<div class="display-flex justify-content-space-between">
+  <ng-container *ngIf="user$| async as user; else noUser">
+    <div>
+      You are logged in as {{user}}
+    </div>  
+    <button (click)="logout()">Logout</button>
+  </ng-container>
+
+  <ng-template #noUser>
+    Please login
+  </ng-template>
+    
+</div>

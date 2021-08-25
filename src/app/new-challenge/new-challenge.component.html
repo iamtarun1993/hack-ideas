@@ -1,0 +1,35 @@
+<div class="new-challenge--body">
+  <div class="new-challenge--form">
+    <form [formGroup]="newChallengeForm">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Challnge name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+      </div>
+    
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Challnge name</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
+    
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Tags</mat-label>
+          <mat-select formControlName="tags" multiple>
+            <mat-option *ngFor="let tag of tagsList" [value]="tag">{{tag}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    
+      <div>
+        <button mat-stroked-button (click)="addNewChallenge()">Add</button>
+      </div>
+    </form>
+
+
+    </div>
+</div>
+
