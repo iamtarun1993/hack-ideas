@@ -48,6 +48,26 @@ export class TestComponent implements OnInit {
           return item.name.toLowerCase().indexOf(val) > -1 || item.description.toLowerCase().indexOf(val) > -1;
         }) 
       } else {
+        let searchItems = value.split(" ");
+        console.log(searchItems)
+        this.data = this.originalData.filter((item) => {
+          var found = true;
+          searchItems.forEach((searchItem) => {
+            if (item.name.toLowerCase().indexOf(searchItem) > -1 || item.description.toLowerCase().indexOf(searchItem) > -1) {
+              found = true
+            } else {
+              found = false
+            }
+          })
+
+          if (found) {
+            return true;
+          } else {
+            return false;
+          }
+        })
+
+
         
         
       }
