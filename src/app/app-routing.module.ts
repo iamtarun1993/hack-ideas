@@ -9,7 +9,7 @@ import { TestComponent } from './test/test.component';
 const routes: Routes = [
   {path: 'sign_in', component: SignInComponent},
   {path: '', component: ChallengesListComponent, canActivate: [AuthGuardService]},
-  {path: 'test', component: TestComponent},
+  {path: 'test/:id', component: TestComponent},
   {path: 'new_challenge', component: NewChallengeComponent, canActivate: [AuthGuardService]}
 ];
 

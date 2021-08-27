@@ -1,0 +1,32 @@
+.abc-33{
+  border: 1px solid #6c6c6c;
+  border-radius: 4px;
+  padding: 1px;
+  background-color: #d8d8d8;
+}
+
+.header {
+  background-color: #d8d8d8;
+  color: #1e1e1e;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.image {
+  width: 100%;
+}
+
+.details {
+  padding: 20px;
+  background-color: #d8d8d8;
+}
+
+.description {
+  min-height: 100px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

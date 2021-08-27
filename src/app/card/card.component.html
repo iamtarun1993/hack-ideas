@@ -1,0 +1,12 @@
+<div class="abc-33 display-flex flex-direction-column justify-content-space-between">
+  <div class="header">
+    {{index + 1}}. {{item.name}}
+  </div>
+  <div class="image-container">
+    <img class="image" src="{{item.image}}" />
+  </div>
+  <div class="details">
+    <div class="description">{{item.description}}</div>
+    <h3>Updated at {{item.dateLastEdited | date: 'MMM d, y'}}</h3>
+  </div>
+</div>

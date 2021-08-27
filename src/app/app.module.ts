@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { TestComponent } from './test/test.component';
 import { NewChallengeComponent } from './new-challenge/new-challenge.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CardComponent } from './card/card.component';
 
 
 
@@ -27,7 +28,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ChallengesListComponent,
     TestComponent,
     NewChallengeComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

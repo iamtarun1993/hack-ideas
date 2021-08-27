@@ -1,60 +1,69 @@
-<div class="navbar-container display-flex justify-content-space-between">
-
-  <div>
-    <input placeholder="Type" id="myInput" (input)="typing($event)"/>
+<div class="test-conatiner">
+  <div class="navbar-container display-flex justify-content-space-between">
+    <div>
+      <input placeholder="Type" id="myInput" (input)="typing($event)"/>
+    </div>
+  
+  
+    <div>
+      Sort by
+      <select class="drop-down" name="sortBy" id="mySelect" (change)="sort($event)">
+        <option value="none">None</option>
+        <option value="title">Title</option>
+        <option value="date">Date</option>
+      </select>
+  
+    </div>
   </div>
-
-
-  <div>
-    Sort by
-    <select class="drop-down" name="sortBy" id="mySelect" (change)="sort($event)">
-      <option value="none"></option>
-      <option value="title">Title</option>
-      <option value="date">Date</option>
-    </select>
-
-  </div>
-</div>
-
-
-<div class="display-grid justify-content-space-between test-grid ">
-  <ng-container *ngFor="let item of data; index as i">
-    <ng-container *ngIf="i >= startIndex && i < lastIndex">
-      <div class="abc-33 display-flex flex-direction-column justify-content-space-between">
-        <div class="image-container">
-          <img class="image" src="{{item.image}}" />
-        </div>
-        <div>
-          <h2>{{i}}. {{item.name}}</h2>
-          <p>{{item.description}}</p>
-          <h3>Updateded at {{item.dateLastEdited | date: 'MMM d, y'}}</h3>
-        </div>
-      </div>
+  
+  
+  <div class="display-grid justify-content-space-between test-grid ">
+    <ng-container *ngFor="let item of data; index as i">
+      <ng-container *ngIf="(i >= (page - 1) * itemCount) && i < (page * itemCount)">
+        <app-card [item]="item" [index]="i"></app-card>
+      </ng-container>
     </ng-container>
-  </ng-container>
+  </div>
+  
+  <div class="prev-next-container display-flex justify-content-flex-end">
+    <div>
+      No of items per page
+      <select class="drop-down" name="no_of_items" id="noOfItems" (change)="changePageCount($event)">
+        <ng-container *ngFor="let papageCountOption of pageCountOptions">
+          <option value="{{papageCountOption}}">{{papageCountOption}}</option>
+        </ng-container>
+      </select>
+    </div>
+    <button (click)="prev()" [disabled]="page === 1">Prev</button>
+    <button (click)="next()" [disabled]="page >= (data.length / itemCount)">Next</button>
+  </div>
+  
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Desription</th>
+          <th>Image</th>
+          <th>Updated at</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr *ngFor="let item of data; index as i">
+          <ng-container *ngIf="(i >= (page - 1) * itemCount) && i < (page * itemCount)">
+            <td label="Name">{{item.name}}</td>
+            <td label="Desription">{{item.description}}</td>
+            <td label="Image">
+              <img class="table-image" src="{{item.image}}" />
+            </td>
+            <td label="Updated at">{{item.dateLastEdited | date: 'MMM d, y'}}</td>
+          </ng-container>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<div class="prev-next-container display-flex justify-content-space-between">
-  <button (click)="prev()" [disabled]="startIndex === 0">Prev</button>
-  <button (click)="next()" [disabled]="lastIndex >= data.length">Next</button>
-</div>
-
-<div class="table">
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Desription</th>
-      <th>Image</th>
-      <th>dateLastEdited</th>
-    </tr>
-    <tbody>
-      <tr *ngFor="let item of data; index as i">
-        <td>{{item.name}}</td>
-        <td>{{item.description}}</td>
-        <td>{{item.image}}</td>
-        <td>{{item.dateLastEdited | date: 'MMM d, y'}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
   
